@@ -16,13 +16,15 @@ function draw() {
 	// save drawing context, then set some globals for the drawing:
 	drawing.save();
 	drawing.globalCompositeOperation = "destination-over";
-	drawing.clearRect(0,0,220,220);
-	drawing.translate(150,150);			// move the center into the page
+	drawing.clearRect(0,0,myCanvas.width, myCanvas.height);
+	drawing.translate(60,60);			// move the center into the page
 	drawing.scale(0.5,0.5);
 	drawing.rotate(-Math.PI/2);			// rotate 1/4 turn ccw
 	drawing.lineCap = "round";			// set line styles
 	drawing.lineWidth = 4;
 
+
+	
 	// draw second hand
 	drawing.save();						// save canvas rotation/translation, etc
 	drawing.rotate(seconds * (Math.PI/30));	// rotate to draw second hand
@@ -60,6 +62,7 @@ function draw() {
 	drawing.arc(0,0, 100, 0, seconds * Math.PI/30, false); // draw a circle
 	drawing.stroke(); 							// stroke the circle
 	drawing.restore();
-		
+	
+	
 
 }
